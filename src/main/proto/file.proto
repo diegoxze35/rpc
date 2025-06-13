@@ -1,0 +1,15 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "file.service.proto";
+
+message GetFileResponse {
+  bytes data = 1;
+}
+
+message GetFileRequest {
+  string fileName = 1;
+}
+
+service FileService {
+  rpc getFile(GetFileRequest) returns (stream GetFileResponse);
+}
