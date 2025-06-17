@@ -3,7 +3,7 @@ Descripción
 Este servicio gRPC implementa un sistema eficiente para transferir archivos de gran tamaño (4GB+) utilizando streaming de datos en chunks. Está diseñado para manejar transferencias de archivos grandes con un consumo mínimo de memoria en el servidor.
 
 ## Características a este commit
-- Streaming de datos en chunks (64KB)
+- Streaming de datos en chunks (4MB)
 - Control de concurrencia para evitar sobrecarga del servidor
 
 ## Requisitos técnicos
@@ -30,7 +30,7 @@ service FileService {
 }
 ```
 ## Configuración adicional de la JVM
--XX:MaxDirectMemorySize=6G
+-XX:MaxDirectMemorySize=8G
 
 ## Uso con grpcurl
 ```
